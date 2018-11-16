@@ -11,11 +11,14 @@ jobs:
     steps:
       - checkout
       - run:
-          name: 'NPM update'
-          command: 'curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash | sudo apt-get install -y nodejs'
+          name: update-npm
+          command: 'sudo npm install -g npm@latest'
       - run:
           name: install-npm-wee
           command: npm install
+      - run:
+          name: test
+          command: npm test
       - run:
           name: 'just check lint'
           command: './node_modules/.bin/eslint src/**/*.{vue,js}'
