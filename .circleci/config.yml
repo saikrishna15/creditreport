@@ -12,5 +12,4 @@ jobs:
       - run: echo 'export PATH=$PATH:$CIRCLE_WORKING_DIRECTORY/node_modules/.bin' >> $BASH_ENV
       - run: echo $BASH_ENV
       - run: cat $BASH_ENV
-      - run: cat $CIRCLE_PROJECT_REPONAME
       - run: eslint src/**/*.{vue,js}
