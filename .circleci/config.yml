@@ -13,4 +13,4 @@ jobs:
       - run: echo $BASH_ENV
       - run: cat $BASH_ENV
       - run: cat $CIRCLE_PROJECT_REPONAME
-      - run: eslint src/**/*.{vue,js}
+      - run: npm run lint src/**/*.{vue,js}
