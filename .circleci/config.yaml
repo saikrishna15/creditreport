@@ -1,0 +1,11 @@
+version: 2.1
+
+orbs:
+    hello: circleci/creditreport@0.1.0
+
+jobs:
+  build:
+    steps:
+      -run:
+        name: "Javascript Linter"
+        command: ./node_modules/.bin/eslint src/**/*.{vue,js}
