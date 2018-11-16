@@ -5,6 +5,7 @@ orbs:
 
 jobs:
   build:
+    working_directory: ~/creditreport # directory where steps will run
     docker: # use the docker executor type; machine and macos executors are also supported
       - image: circleci/node:4.8.2
     steps:
@@ -13,7 +14,7 @@ jobs:
           name: 'NPM update'
           command: 'curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash | sudo apt-get install -y nodejs'
       - run:
-          name: 'install node modules'
+          name: install-npm-wee
           command: npm install
       - run:
           name: 'just check lint'
