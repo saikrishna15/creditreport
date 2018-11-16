@@ -11,7 +11,7 @@ jobs:
       - checkout
       - run:
           name: 'NPM update'
-          command: 'sudo npm install -g npm@latest'
+          command: 'curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash | sudo apt-get install -y nodejs'
       - run:
           name: 'install node modules'
           command: npm install
