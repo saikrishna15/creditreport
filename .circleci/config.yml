@@ -14,7 +14,7 @@ jobs:
           command: 'sudo npm install -g npm@latest'
       - run:
           name: 'install node modules'
-          command: 'npm install'
+          command: npm install
       - run:
           name: 'just check lint'
           command: './node_modules/.bin/eslint src/**/*.{vue,js}'
