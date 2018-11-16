@@ -9,4 +9,4 @@ jobs:
       - image: circleci/node:4.8.2
     steps:
       - checkout
-      - run: yarn eslint src/**/*.{vue,js}
+      - run: yarn lint src/**/*.{vue,js}
