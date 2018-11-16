@@ -9,7 +9,12 @@ jobs:
       - image: circleci/node:4.8.2
     steps:
       - checkout
-      - run: echo 'export PATH=$PATH:$CIRCLE_WORKING_DIRECTORY/node_modules/.bin' >> $BASH_ENV
-      - run: echo $BASH_ENV
-      - run: cat $BASH_ENV
-      - run: eslint src/**/*.{vue,js}
+      - run:
+          name: 'NPM update'
+          command: 'sudo npm install -g npm@latest'
+      - run:
+          name: 'install node modules'
+          command: 'npm install'
+      - run:
+          name: 'just check lint'
+          command: './node_modules/.bin/eslint src/**/*.{vue,js}'
