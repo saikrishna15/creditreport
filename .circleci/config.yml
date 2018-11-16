@@ -6,6 +6,5 @@ orbs:
 jobs:
   build:
     steps:
-      -run:
-        name: "Javascript Linter"
-        command: ./node_modules/.bin/eslint src/**/*.{vue,js}
+      - checkout
+      - run: ./node_modules/.bin/eslint src/**/*.{vue,js}
