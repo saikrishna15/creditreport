@@ -5,6 +5,8 @@ orbs:
 
 jobs:
   build:
+    docker: # use the docker executor type; machine and macos executors are also supported
+      - image: circleci/node:4.8.2
     steps:
       - checkout
       - run: ./node_modules/.bin/eslint src/**/*.{vue,js}
