@@ -9,4 +9,5 @@ jobs:
       - image: circleci/node:4.8.2
     steps:
       - checkout
-      - run:  /usr/local/bin/eslint src/**/*.{vue,js}
+      - run: echo 'export PATH=$CIRCLE_PROJECT_REPONAME/node_modules/.bin::$PATH' >> $BASH_ENV
+      - run: eslint src/**/*.{vue,js}
