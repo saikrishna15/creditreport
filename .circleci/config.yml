@@ -9,4 +9,4 @@ jobs:
       - image: circleci/node:4.8.2
     steps:
       - checkout
-      - run: eslint src/**/*.{vue,js}
+      - run:  /usr/local/bin/eslint src/**/*.{vue,js}
